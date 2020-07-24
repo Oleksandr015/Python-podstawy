@@ -1,0 +1,10 @@
+MNC,Manchester City
+LFC,Liverpool FC
+CHE,Chelsea
+TOT,Tottenham Hotspur
+ARS,Arsenal
+MNU,Manchester United
+WOL,Wolverhampton Wanderers
+EVE,Everton
+LEI,Leicester City
+WHU,West Ham United
