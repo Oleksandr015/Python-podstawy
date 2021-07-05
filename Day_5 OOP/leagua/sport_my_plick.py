@@ -12,7 +12,7 @@ class Player:
         if self.team is None:
             return f'My name is {self.name} I don’t have a team'
         else:
-            return f'My {self.name} is name I play for {self.team.name}'
+            return f'My name is {self.name} I play for {self.team.name}'
 
     def __str__(self):
         return self.introduce()
@@ -107,7 +107,7 @@ class League:
 
 def hire_players_in_teams(players, teams):
     for index, player in enumerate(players):
-        teams[index % len(teams)].hire_player(player)
+        return teams[index % len(teams)].hire_player(player)
 
 
 def generate_matches(teams):
@@ -145,15 +145,19 @@ def load_teams(path):
 
 if __name__ == '__main__':
     player_1 = Player('Piotr', 25, 15000)
-    #player_2 = Player('Eva', 23, 12000)
+    player_2 = Player('Eva', 23, 12000)
     #print(player_1.introduce())
     #print(player_1)
     #print(repr(player_1))
     # print()
     team_1 = Team('Liverpool FC', 'LFC')
     team_1.hire_player(player_1)
+    team_1.hire_player(player_2)
     print('After Piotr Hired')
     print(team_1.players)
+    print(player_1.team)
+    print(player_2.team)
+    print('-------------')
     team_1.fire_player('Piotr')
     print('After Piotr Fired')
     print(team_1.players)
@@ -177,9 +181,8 @@ if __name__ == '__main__':
     players = load_players('players.txt')
     teams = load_teams('teams.txt')
 
-    hire_players_in_teams(players, teams)
-    #print(teams[0].players)
-    #league = build_league(2019, teams)
-    #league.play_season()
-    #print(league)
-    print(generate_matches(teams))
+    print(hire_players_in_teams(players, teams))
+    print(teams[0].players)
+    league = build_league(2019, teams)
+    print(league)
+    #print(generate_matches(teams))
