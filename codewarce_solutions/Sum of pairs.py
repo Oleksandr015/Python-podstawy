@@ -1,10 +1,9 @@
 def sum_pairs(ints, s):
-    seen=[]
+    seen = []
     for item in ints:
-        if s-item in seen: return [s-item, item]
-        if item not in seen: seen+=[item]
+        if s - item in seen: return [s - item, item]
+        if item not in seen: seen += [item]
     return None
-
 
 
 if __name__ == '__main__':
